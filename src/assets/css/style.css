@@ -1,0 +1,11 @@
+.swiper-slide{
+  height: 66%;
+}
+ion-slides{
+  height: auto
+}
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets{
+    bottom: 2%;
+    background-color: rgba(255, 54, 54, 0.2);
+    padding: 10px;
+}

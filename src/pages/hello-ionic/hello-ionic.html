@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Ionic</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+
+  <ion-slides padding id='slider' pager="true" autoplay=1000 loop=true>
+    <ion-slide *ngFor ="let newData of Data">
+      <img src="{{ newData.img1}}" >
+    </ion-slide>
+    
+  </ion-slides>
+  <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
+      <ion-avatar item-left>
+      <img *ngIf="item.better_featured_image.media_details.sizes.thumbnail.source_url" [src]="item.better_featured_image.media_details.sizes.thumbnail.source_url">
+      </ion-avatar>
+      <h2 [innerHTML]="item.title.rendered"></h2>
+      <p [innerHTML]="item.excerpt.rendered"></p>
+    </button>
+  </ion-list>
+</ion-content>
