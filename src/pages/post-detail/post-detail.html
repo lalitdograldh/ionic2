@@ -7,9 +7,17 @@
 </ion-header>
 
 <ion-content padding>
- <div *ngIf="selectedItem" class="selection">
-  <img *ngIf="selectedItem.better_featured_image.media_details.sizes.medium_large.source_url" [src]="selectedItem.better_featured_image.media_details.sizes.medium_large.source_url">
-    <h2 [innerHTML]="selectedItem.title.rendered"></h2>
-    <div [innerHTML]="selectedItem.content.rendered"></div>
- </div>
+ <ion-list *ngIf="selectedItem" class="selection">
+  <!-- <img *ngIf="selectedItem.post_meta_fields._wpvideo_video_yt" [src]="selectedItem.selectedItem.post_meta_fields._wpvideo_video_yt"> -->
+  <div class="card">
+    <ion-item>
+      <div class="video-container">
+      
+       <!--  <iframe [src]='photoURL()' height="400" width="400" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+      </div>
+    </ion-item>
+  </div>
+  <!-- <h2 [innerHTML]="selectedItem.title.rendered"></h2> -->
+  <!-- <div [innerHTML]="selectedItem.content.rendered"></div> -->
+</ion-list>
 </ion-content>

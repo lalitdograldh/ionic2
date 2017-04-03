@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 import { NavController } from 'ionic-angular';
 import { PostDetail } from '../post-detail/post-detail';
 
+
 @Component({
 	selector: 'page-hello-ionic',
 	templateUrl: 'hello-ionic.html'
@@ -31,7 +32,7 @@ export class HelloIonicPage {
 	
 	];
 
-	url: string = 'http://uniquecoders.in/dev/videogallery/wp-json/wp/v2/posts';
+	url: string = 'http://uniquecoders.in/dev/videogallery/wp-json/wp/v2/sp_html5video';
 	items: any;	
 
 	ionViewDidEnter() {
@@ -46,5 +47,7 @@ export class HelloIonicPage {
 		  item: item
 		});
 	}
+
+	
 
 }
