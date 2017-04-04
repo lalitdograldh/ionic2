@@ -6,7 +6,7 @@ import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
 import { PostDetail } from '../pages/post-detail/post-detail';
-
+import { FacebookModule } from 'ng2-facebook-sdk';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -20,7 +20,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PostDetail
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),FacebookModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
