@@ -1,7 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-
 import { Platform, MenuController, Nav } from 'ionic-angular';
-
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {LoginPage} from '../pages/login/login-page';
@@ -26,6 +24,7 @@ export class MyApp {
     public statusBar: StatusBar,
     public splashScreen: SplashScreen,
     public loadingCtrl: LoadingController
+    
     ) {
     this.initializeApp();
 
@@ -49,6 +48,7 @@ export class MyApp {
       duration: 2000
     });
     loader.present();
+   
     
   }
 

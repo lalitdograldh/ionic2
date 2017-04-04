@@ -9,6 +9,19 @@ import { PostDetail } from '../pages/post-detail/post-detail';
 import { FacebookModule } from 'ng2-facebook-sdk';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { CloudSettings, CloudModule } from '@ionic/cloud-angular'
+
+const cloudSettings: CloudSettings = {
+  'core': {
+    'app_id': 'dda5e9d0'
+  },
+  'auth': {
+    'google': {
+      'webClientId': '1072738882760-kccbcmql88873qu3vl979gkjnnj3ed7i.apps.googleusercontent.com',
+      'scope': []
+    }
+  }
+}
 
 @NgModule({
   declarations: [
@@ -20,7 +33,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     PostDetail
   ],
   imports: [
-    IonicModule.forRoot(MyApp),FacebookModule.forRoot()
+    IonicModule.forRoot(MyApp),FacebookModule.forRoot(),
+    CloudModule.forRoot(cloudSettings)
   ],
   bootstrap: [IonicApp],
   entryComponents: [
