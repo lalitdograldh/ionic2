@@ -1,6 +1,5 @@
-import { Component,OnInit} from '@angular/core';
-import { FacebookService,InitParams } from 'ng2-facebook-sdk';
-
+import { Component} from '@angular/core';
+import {FacebookService, LoginResponse} from 'ng2-facebook-sdk';
 
 @Component({
 
@@ -8,25 +7,26 @@ import { FacebookService,InitParams } from 'ng2-facebook-sdk';
 	templateUrl: 'login-page.html'
 })
 export class LoginPage  {
- 	
-	
 	constructor(private fb: FacebookService) {
-	let initParams: InitParams =({
-            appId      : '1261158457331826',
-            cookie     : false,  // enable cookies to allow the server to access
-                                // the session
-            xfbml      : true,  // parse social plugins on this page
-            version    : 'v2.8' // use graph api version 2.5
-        });
+		console.log(fb);
+		fb.init({
+			appId      : '1878936962394763',
+			version    : 'v2.8' // use graph api version 2.5
+		});
 		
-		
-	}
-	onFacebookLoginClick(){
-		this.fb.login();
 		
 
 	}
-
-
+	onFacebookLoginClick()
+	{
+		this.fb.login()
+		.then((res: LoginResponse) => {
+			console.log('Logged in', res);
+		})
+		.catch(this.handleError);
+	}
+	private handleError(error) {
+		console.error('Error processing action', error);
+	}
 	
 }
