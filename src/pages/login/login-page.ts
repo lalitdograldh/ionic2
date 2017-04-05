@@ -1,39 +1,36 @@
 import { Component} from '@angular/core';
 //import { Injectable } from '@angular/core';
-import {FacebookService, LoginResponse} from 'ng2-facebook-sdk';
+import {Facebook} from 'ionic-native';
 import { GoogleAuth, User } from '@ionic/cloud-angular';
 
 
 @Component({
 
 	selector: 'page-login-ionic',
-	templateUrl: 'login-page.html'
+	templateUrl: 'login-page.html',
+	providers: [Facebook]
 })
 export class LoginPage  {
-	constructor(private fb: FacebookService,public googleAuth: GoogleAuth, public user: User) {
-		console.log(fb);
-		/*const params: InitParams = {
-			appId     : '1878936962394763',
-			xfbml	  : true,
-			version   : 'v2.8' 
-		};
-		console.log(fb.init(params));*/
-	}
-	onFacebookLoginClick()
-	{
-		this.fb.login()
-		.then((res: LoginResponse) => {
-			console.log('Logged in', res);
+	
+
+	constructor(public googleAuth: GoogleAuth, public user: User) {}
+
+	onFacebookLoginClick(){
+		//console.log('asd');
+		Facebook.login(['email']).then((response) => {
+			console.log('Logged in');
+			console.log(JSON.stringify(response.authResponse));
+		}, (error) => {
+			console.log(error);
 		})
-		.catch(this.handleError);
 	}
-	private handleError(error) {
-		console.error('Error processing action', error);
-	}
+	
+	
+	
 	login(){
-		console.log('asdasdasdasd');
+		//console.log('asdasdasdasd');
 		this.googleAuth.login().then((success)=>{
-			console.log('asdasdasdasd');
+			//console.log('asdasdasdasd');
 			alert('Logged In');
 			alert(JSON.stringify(success));
 		});

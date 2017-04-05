@@ -6,11 +6,10 @@ import { HelloIonicPage } from '../pages/hello-ionic/hello-ionic';
 import { ItemDetailsPage } from '../pages/item-details/item-details';
 import { ListPage } from '../pages/list/list';
 import { PostDetail } from '../pages/post-detail/post-detail';
-import { FacebookModule } from 'ng2-facebook-sdk';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular'
-
+import {Facebook} from 'ionic-native';
 const cloudSettings: CloudSettings = {
   'core': {
     'app_id': 'dda5e9d0'
@@ -33,7 +32,7 @@ const cloudSettings: CloudSettings = {
     PostDetail
   ],
   imports: [
-    IonicModule.forRoot(MyApp),FacebookModule.forRoot(),
+    IonicModule.forRoot(MyApp),
     CloudModule.forRoot(cloudSettings)
   ],
   bootstrap: [IonicApp],
@@ -46,7 +45,7 @@ const cloudSettings: CloudSettings = {
     PostDetail
   ],
   providers: [
-    StatusBar,
+    StatusBar,Facebook,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
