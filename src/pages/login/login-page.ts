@@ -2,6 +2,7 @@ import { Component} from '@angular/core';
 //import { Injectable } from '@angular/core';
 import {Facebook} from 'ionic-native';
 import { GoogleAuth, User } from '@ionic/cloud-angular';
+import { NavController, NavParams } from 'ionic-angular';
 
 
 @Component({
@@ -13,16 +14,23 @@ import { GoogleAuth, User } from '@ionic/cloud-angular';
 export class LoginPage  {
 	
 
-	constructor(public googleAuth: GoogleAuth, public user: User) {}
+	constructor(public googleAuth: GoogleAuth, public user: User,public navCtrl: NavController, public navParams: NavParams) {}
 
 	onFacebookLoginClick(){
 		//console.log('asd');
-		Facebook.login(['email']).then((response) => {
+		Facebook.login(['email','user_status']).then((response) => {
 			console.log('Logged in');
 			console.log(JSON.stringify(response.authResponse));
 		}, (error) => {
 			console.log(error);
 		})
+		//this.navCtrl.push(YourPage)
+
+		
+
+	}
+	onFacebookLogoutClick(){
+		Facebook.logout();
 	}
 	
 	
