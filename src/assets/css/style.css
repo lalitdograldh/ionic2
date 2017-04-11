@@ -13,7 +13,11 @@ ion-slides{
     color: #fff;
     background-color: #617AAC;
     padding: 12px 25px;
+    width: 100%;
+    float:left;
+    margin: 10px 0;
 }
+.mob-down{padding:0;}
 .text-center{
 	text-align: center;
 }

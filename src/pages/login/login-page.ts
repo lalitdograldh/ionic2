@@ -38,8 +38,8 @@ export class LoginPage  {
 	login(){
 		//console.log('asdasdasdasd');
 		this.googleAuth.login().then((success)=>{
-			//console.log('asdasdasdasd');
-			alert('Logged In');
+			console.log('asdasdasdasd');
+			
 			alert(JSON.stringify(success));
 		});
 	}
