@@ -33,6 +33,8 @@ export class HelloIonicPage {
 	];
 
 	url: string = 'http://uniquecoders.in/dev/videogallery/wp-json/wp/v2/sp_html5video';
+	//url:string ='http://uniquecoders.in/dev/videogallery/wp-json/wp/v2/posts';
+
 	items: any;	
 
 	ionViewDidEnter() {
@@ -42,6 +44,7 @@ export class HelloIonicPage {
 		this.http.get(this.url)
 		.map(res => res.json())
 		.subscribe(data => {
+
 			this.items = data;
 			console.log(this.items);
 		});

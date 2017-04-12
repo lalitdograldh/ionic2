@@ -17,17 +17,17 @@ export class PostDetail implements OnInit{
 	}
 	ngOnInit(){
 
-		this.youTube = this.selectedItem.post_meta_fields._wpvideo_video_yt;//;
+		//this.youTube = this.selectedItem.post_meta_fields._wpvideo_video_yt;//;
 		//console.log(this.youTube);
 	}
 	
 	photoURL() {
 		
 
-		this.video = this.sanitizer.bypassSecurityTrustResourceUrl(this.youTube);
+		//this.video = this.sanitizer.bypassSecurityTrustResourceUrl(this.youTube);
 		//console.log(this.video);
 	
-		return this.video;
+		//return this.video;
 
 	}
 }

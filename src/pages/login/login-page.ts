@@ -51,7 +51,7 @@ export class LoginPage  {
 	doLogin(){
 		if(this.showLogin){
 			//console.log('process Login');
-			this.http.get('data/authenticate.json')
+			this.http.get('/api/data/authenticate.json')
 			.subscribe((response: Response) => {
 				//console.log(response);
 				let user = response.json();
