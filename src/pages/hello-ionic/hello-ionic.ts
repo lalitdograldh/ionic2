@@ -36,10 +36,14 @@ export class HelloIonicPage {
 	items: any;	
 
 	ionViewDidEnter() {
-		this.http.get( this.url )
+		//console.log(this.url);
+
+		//console.log('asdasdasd');
+		this.http.get(this.url)
 		.map(res => res.json())
 		.subscribe(data => {
 			this.items = data;
+			console.log(this.items);
 		});
 	}
 	itemTapped(event, item) {
