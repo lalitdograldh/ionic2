@@ -21,3 +21,5 @@ ion-slides{
 .text-center{
 	text-align: center;
 }
+.video-container{float: left;width: 100%}
+iframe{float: left;margin: 20px 0;}

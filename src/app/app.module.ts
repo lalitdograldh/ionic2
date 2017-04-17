@@ -10,6 +10,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular'
 import {Facebook} from 'ionic-native';
+import { core } from 'videogular2/core';
+import { controls} from 'videogular2/controls';
+import { overlay-play } from 'videogular2/overlay-play';
+
 const cloudSettings: CloudSettings = {
   'core': {
     'app_id': 'dda5e9d0'
@@ -30,6 +34,7 @@ const cloudSettings: CloudSettings = {
     ItemDetailsPage,
     ListPage,
     PostDetail
+    
   ],
   imports: [
     IonicModule.forRoot(MyApp),
@@ -42,7 +47,10 @@ const cloudSettings: CloudSettings = {
     HelloIonicPage,
     ItemDetailsPage,
     ListPage,
-    PostDetail
+    PostDetail,
+    core,
+    controls,
+    overlay-play
   ],
   providers: [
     StatusBar,Facebook,
